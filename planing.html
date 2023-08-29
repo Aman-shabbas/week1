@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Travel</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+
+    <link href="select2.min.css" rel="stylesheet" />
+    <script src="jquery.min.js"></script>
+    <script src="select2.min.js"></script>
+    <link href="main.css" rel="stylesheet"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="history.html">World Travel</a>
+
+            <!-- Toggler button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="destinations.html">Top Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="planing.html">Plan Your Trip</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <h4>Plan with us</h4>
+            <p>Unlock the gateway to unforgettable journeys by signing up for a personalized trip quote today. Your dream adventure awaits, and we're here to make it a reality. By providing us with a few essential details, you'll receive a tailored itinerary and cost estimate, designed exclusively to match your preferences and budget. Our team of travel experts is dedicated to curating experiences that will leave you with lasting memories. So, take the first step towards your next epic adventure and let us craft a journey that's uniquely yours. Sign up now and embark on a voyage of discovery and wonder. Your extraordinary adventure is just a click away!</p>
+        </div>
+    </div>
+    <div class="container mt-5 ">
+        <h6>Get a Quote</h6>
+        <form>
+            <div class="row">
+                <div class="row mt-3">
+                    <div id="destination-select">
+                        <input type="text" id="destination-input" placeholder="Destination" list="mySelect" class="form-control" style="margin: 0;" required>
+                        <datalist id="mySelect">
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Utterpradesh">Utterpradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Tamilnadu">Tamilnadu</option>
+                            <option value="Karnadaka">Karnadaka</option>
+                            <option value="Andrapradesh">Andrapradesh</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Assam">Assam</option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-floating col-md-6 mt-2">
+                        <input type="date" class="form-control" name="sdate" placeholder="Start date" id="sdate" required>
+                        <label for="sdate">Starting Date</label>
+                    </div>
+                    <div class="form-floating col-md-6 mt-2" >
+                        <input type="date" class="form-control" name="edate" placeholder="End date" id="edate" required>
+                        <label for="edate">End Date</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mt-2">
+                        <input type="number" class="form-control" name="budget" placeholder="Your Budget" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-2">
+                        <select class="form-control">
+                            <option>Mode of Travel</option>
+                            <option value="solo">Solo</option>
+                            <option value="Family">Family</option>
+                            <option value="Friends">Friends</option>
+                            <option value="couple">Couple</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <input type="number" class="form-control" name="numofmembers" placeholder="Number of Travelors" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-2">
+                        <input type="text" class="form-control" name="fname" placeholder="First name" required>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <input type="text" class="form-control" name="lname" placeholder="Second name" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-2">
+                        <input type="number" class="form-control" name="phone" placeholder="Phone number" required>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <input type="text" class="form-control" name="email" placeholder="Email" id="email" required>
+                        <div id="emailStatus"></div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-dark mt-3" id="btn" style="width:96%; margin-left: 1%;">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="container mt-5">
+        <h4>Why Planing Is Important</h4>
+        <p>Planning a trip is a crucial step in ensuring a successful and enjoyable travel experience. It serves as the roadmap that paves the way for memorable adventures. Whether you're embarking on a solo expedition, a family getaway, or a romantic escape, meticulous planning allows you to make the most of your time, resources, and opportunities. It enables you to research destinations, set realistic budgets, secure accommodations, and craft itineraries tailored to your interests. Moreover, planning fosters a sense of anticipation and excitement, turning the journey itself into an integral part of the overall experience. Ultimately, a well-thought-out travel plan not only enhances convenience but also opens doors to unexpected discoveries and enriching encounters, making each adventure a story worth cherishing.</p>
+    </div>
+
+
+
+
+
+
+    <div id="footer-container"></div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+    <script>
+        window.onload = function(){
+            document.getElementById('btn').disabled = true;
+        };
+        const input = document.getElementById('destination-input');
+        const datalist = document.getElementById('mySelect');
+
+        input.addEventListener('input', function () {
+            const value = this.value.toLowerCase();
+            const options = datalist.getElementsByTagName('option');
+
+            for (let i = 0; i < options.length; i++) {
+                const optionValue = options[i].value.toLowerCase();
+                if (optionValue.indexOf(value) !== -1) {
+                    options[i].style.display = 'block';
+                } else {
+                    options[i].style.display = 'none';
+                }
+            }
+        });
+
+        const email = document.getElementById('email');
+        const emailsts = document.getElementById('emailStatus');
+        email.addEventListener('input', function () {
+
+            const emailValue = email.value.trim();
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if (!emailRegex.test(emailValue)) {
+                emailsts.style.display = 'block';
+                emailsts.textContent = "Invalid Email Addres";
+                email.classList.add('text-danger');
+                email.classList.remove('text-seccess');
+                document.getElementById('btn').disabled = true;
+            }else{
+                emailsts.style.display = 'none'
+                email.classList.add('text-success');
+                email.classList.remove('text-danger');
+                document.getElementById('btn').disabled = false;
+
+            }
+        });
+
+
+    </script>
+</body>
+</html>
