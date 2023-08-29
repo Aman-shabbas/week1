@@ -51,7 +51,7 @@
     </div>
     <div class="container mt-5 ">
         <h6>Get a Quote</h6>
-        <form>
+        <form id="quote">
             <div class="row">
                 <div class="row mt-3">
                     <div id="destination-select">
@@ -83,12 +83,12 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 mt-2">
-                        <input type="number" class="form-control" name="budget" placeholder="Your Budget" required>
+                        <input type="number" class="form-control" name="budget" placeholder="Your Budget" required id="budget">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mt-2">
-                        <select class="form-control">
+                        <select class="form-control" id="mod">
                             <option>Mode of Travel</option>
                             <option value="solo">Solo</option>
                             <option value="Family">Family</option>
@@ -97,20 +97,20 @@
                         </select>
                     </div>
                     <div class="col-md-6 mt-2">
-                        <input type="number" class="form-control" name="numofmembers" placeholder="Number of Travelors" required>
+                        <input type="number" class="form-control" id="num" name="numofmembers" placeholder="Number of Travelors" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mt-2">
-                        <input type="text" class="form-control" name="fname" placeholder="First name" required>
+                        <input type="text" class="form-control" id="fname" name="fname" placeholder="First name" required>
                     </div>
                     <div class="col-md-6 mt-2">
-                        <input type="text" class="form-control" name="lname" placeholder="Second name" required>
+                        <input type="text" class="form-control" id="lname" name="lname" placeholder="Second name" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mt-2">
-                        <input type="number" class="form-control" name="phone" placeholder="Phone number" required>
+                        <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone number" required>
                     </div>
                     <div class="col-md-6 mt-2">
                         <input type="text" class="form-control" name="email" placeholder="Email" id="email" required>
@@ -159,32 +159,43 @@
             }
         });
 
-        const email = document.getElementById('email');
+        const form = document.getElementById('quote');
         const emailsts = document.getElementById('emailStatus');
-        email.addEventListener('input', function () {
+        form.addEventListener('input', function () {
 
             const emailValue = email.value.trim();
             const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            var destination = document.getElementById('destination-input');
+            var sdate = document.getElementById('sdate');
+            var edate = document.getElementById('edate');
+            var budget = document.getElementById('budget');
+            var mod = document.getElementById('mod');
+            var num = document.getElementById('num');
+            var fname = document.getElementById('fname');
+            var lname = document.getElementById('lname');
+            var email1 = document.getElementById('email');
+            var phone = document.getElementById('phone');
+            
 
-            if (!emailRegex.test(emailValue)) {
+            if(destination !== "" && sdate !== "" && edate !== "" && budget !== ""&& mod !== "" && num !== "" && fname !== "" && lname !== "" && email !== "" && phone !== "" ){
+                document.getElementById('btn').disabled = false;
+            }else if (!emailRegex.test(emailValue)) {
                 emailsts.style.display = 'block';
                 emailsts.textContent = "Invalid Email Addres";
                 email.classList.add('text-danger');
                 email.classList.remove('text-seccess');
                 document.getElementById('btn').disabled = true;
             }else{
-                emailsts.style.display = 'none'
+                emailsts.style.display = 'none';
                 email.classList.add('text-success');
                 email.classList.remove('text-danger');
                 document.getElementById('btn').disabled = false;
-
             }
+            
         });
-
-        document.getElementById('btn').addEventListener('click',function(){
-            alert("Request has been submitted, we'll get back to you soon");
+        document.getElementById('btn').addEventListener('click', function(){
+            alert("Request have been submitted, we'll get back to you soon");
         });
-
 
     </script>
 </body>
